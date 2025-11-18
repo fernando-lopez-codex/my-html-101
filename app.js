@@ -4,8 +4,9 @@ function monthlyPayment(){
     let r= document.getElementById("interest").value;
     let n = document.getElementById("months").value;
 
-    alert(`The values are P = ${P} - r =${r} - n = ${n}`)
+    let payment= P * (r * Math.pow((1+r/100),n)) /(Math.pow((1+r/100),n) -1);
 
-    let payment=0;
+    let result = document.getElementById("result");
+    result.textContent = `The monthly payment would be ${payment}`;
     
 }
